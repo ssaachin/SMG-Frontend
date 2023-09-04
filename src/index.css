@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* .nav_Bar {
+    @apply flex bg-001525 w-full px-10 ;
+} */
+
+/* .bg-custom-img {
+        background-image: url('./Img/wave-haikei.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+} */

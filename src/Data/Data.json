@@ -1,0 +1,27 @@
+
+[
+    {
+      "Name": "Sports Massage",
+      "Description": "A deep-tissue massage for athletes to improve flexibility and prevent injuries.",
+      "Image": "https://media.istockphoto.com/id/1126011093/photo/therapist-giving-lower-back-sports-massage-to-athlete-male-patient.jpg?s=612x612&w=0&k=20&c=CYhv7wX4lYMsYKhEgt2NvqJOLyQQrqrousoZA9Dj8g8=",
+      "Cost": [
+        { "Price_One": "£40", "Price_Two": "£60", "Price_Three": "£75" }
+      ]
+    },
+    {
+      "Name": "Dry Cupping",
+      "Description": "A traditional therapy using suction cups to promote blood circulation and relieve muscle tension.",
+      "Image": "https://media.istockphoto.com/id/1246919695/photo/detail-of-a-woman-therapist-hands-giving-cupping-treatment.jpg?s=612x612&w=0&k=20&c=-FONpiPOO1Sbg5cf9UUiZJkggUfHRjgS9paJn-r-n2Y=",
+      "Cost": [
+        { "Price_One": "£40", "Price_Two": "£60", "Price_Three": "£75" }
+      ]
+    },
+    {
+      "Name": "IASTM (Scrapping)",
+      "Description": "Instrument Assisted Soft Tissue Mobilization to address muscle and fascia problems.",
+      "Image": "https://www.physio-pedia.com/images/1/1b/Graston_Technique.jpg",
+      "Cost": [
+        { "Price_One": "£40", "Price_Two": "£60", "Price_Three": "£75" }
+      ]
+    }
+  ]

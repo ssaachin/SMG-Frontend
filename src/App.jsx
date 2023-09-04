@@ -1,39 +1,118 @@
 import React from 'react';
+import Navbar from './Components/NavBar';
+import HeroImage from './Components/HeroImage';
+import Treatments from './Components/Treatments';
+// import Contact from './Components/contact';
 
-function ProductCard() {
-  return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-      <img
-        src="https://via.placeholder.com/300x200"
-        alt="Product"
-        className="w-full h-48 object-cover"
-      />
-      <div className="p-4">
-        <h2 className="text-xl font-semibold">Product Name</h2>
-        <p className="text-gray-600">Product Description Lorem ipsum dolor sit amet.</p>
-        <div className="mt-4">
-          <span className="text-xl font-semibold">$99.99</span>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-full float-right">
-            Add to Cart
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function App() {
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-semibold text-center mb-8">E-Commerce Page</h1>
-      <div className="grid p-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-      </div>
+    <div className="">
+      <Navbar />
+      <HeroImage />
+      <Treatments />
+      {/* <Contact /> */}
     </div>
   );
 }
 
 export default App;
+
+
+// import React, { useState } from 'react';
+
+// function App() {
+//   const [customer, setCustomer] = useState('');
+//   const [order, setOrder] = useState('');
+//   const [quantity, setQuantity] = useState('');
+//   const [address, setAddress] = useState('');
+//   const [phoneNumber, setPhoneNumber] = useState('');
+//   const [response, setResponse] = useState('');
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+
+//     // Create an object with all the input data
+//     const formData = {
+//       customer,
+//       order,
+//       quantity,
+//       address,
+//       phoneNumber,
+//     };
+
+//     // Make a POST request to your Flask API
+//     fetch('/api/submit', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(formData),
+//     })
+//       .then((response) => response.json())
+//       .then((data) => {
+//         setResponse(data.message);
+//       })
+//       .catch((error) => {
+//         console.error(error);
+//       });
+//   };
+
+//   return (
+//     <div>
+//       <h1>Simple Input API</h1>
+//       <h2>Customer Form</h2>
+//       <form onSubmit={handleSubmit}>
+//         <label>
+//           Customer:
+//           <input
+//             type="text"
+//             value={customer}
+//             onChange={(e) => setCustomer(e.target.value)}
+//           />
+//         </label>
+//         <label>
+//           Order:
+//           <input
+//             type="text"
+//             value={order}
+//             onChange={(e) => setOrder(e.target.value)}
+//           />
+//         </label>
+//         <label>
+//           Quantity:
+//           <input
+//             type="number"
+//             value={quantity}
+//             onChange={(e) => setQuantity(e.target.value)}
+//           />
+//         </label>
+//         <label>
+//           Address:
+//           <input
+//             type="text"
+//             value={address}
+//             onChange={(e) => setAddress(e.target.value)}
+//           />
+//         </label>
+//         <label>
+//           Phone Number:
+//           <input
+//             type="text"
+//             value={phoneNumber}
+//             onChange={(e) => setPhoneNumber(e.target.value)}
+//           />
+//         </label>
+//         <button type="submit">Submit</button>
+//       </form>
+//       <div>
+//         <h3>Response from API:</h3>
+//         <p>{response}</p>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+

@@ -1,0 +1,8 @@
+/* custom.css */
+.hover-underline-red-thick:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px; /* Adjust the offset as needed */
+    text-decoration-color: red;
+    text-decoration-thickness: 2px; /* Adjust the thickness as needed */
+  }
+  
