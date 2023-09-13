@@ -7,7 +7,6 @@ function FirstForm({ onNext, setFormData, formData }) {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
-    // Update the formData in the parent component
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -20,8 +19,6 @@ function FirstForm({ onNext, setFormData, formData }) {
     onNext();
   };
 
-  // let btnDisable = !formData ? 
-
   const isFormValid = firstName.trim() !== '' && lastName.trim() !== '' && email.trim() !== '';
 
 
@@ -30,7 +27,6 @@ function FirstForm({ onNext, setFormData, formData }) {
     <div className="container bg-00233d text-white rounded mx-auto p-7">
       <h1 className="text-2xl font-semibold mb-4">Step 1: Personal Information</h1>
       <div onSubmit={handleSubmit} className="space-y-4">
-        {/* Form fields for personal information */}
         <div className="flex flex-col">
           <label htmlFor="firstname" className="mb-2 text-lg">
             First Name
@@ -78,7 +74,7 @@ function FirstForm({ onNext, setFormData, formData }) {
             // type="submit"
             onClick={onNext}
             disabled={!isFormValid}
-            className={!isFormValid ? "bg-gray-600 text-white py-2 px-4 rounded-lg" : "bg-green-700 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition duration-300 ease-in-out"}
+            className={!isFormValid ? "flex items-center bg-gray-600 text-white py-2 px-4 rounded-lg" : "bg-green-700 text-white py-2 px-5 w-full rounded-lg hover:bg-green-600 transition duration-300 ease-in-out"}
           >
             Next
           </button>
@@ -89,3 +85,5 @@ function FirstForm({ onNext, setFormData, formData }) {
 }
 
 export default FirstForm;
+
+
