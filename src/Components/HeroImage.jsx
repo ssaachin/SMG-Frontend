@@ -25,7 +25,7 @@ export default function HeroImage() {
   const submitFormDataToDatabase = (formData, callback) => {
     console.log('Form Data:', formData);
   
-    fetch('/api/submit', {
+    fetch('https://web-production-42fd.up.railway.app/api/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
