@@ -20,7 +20,7 @@ export default function Login() {
         // Define a function to send the login request
         const login = async () => {
             try {
-                const response = await fetch('/api/login', {
+                const response = await fetch('https://flask-production-a594f.up.railway.app/api/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
