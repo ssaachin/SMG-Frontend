@@ -47,29 +47,74 @@ export default function Login() {
     };
 
     return (
-        <div>
-            <h1>Login</h1>
+        <div className="max-w-md mx-auto mt-16 p-4 bg-001525 rounded-lg shadow-lg text-white">
+            <h1 className="text-2xl font-semibold mb-4">Login</h1>
             {loggedIn ? (
-                <Dashboard /> // Show Dashboard component when loggedIn is true
+                <p className="mb-4">You are logged in. <Dashboard /></p>
             ) : (
-                <form>
-                    <label>Email:</label>
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={handleEmailChange}
-                        required
-                    />
-                    <label>Password:</label>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={handlePasswordChange}
-                        required
-                    />
-                    <button onClick={handleLoginClick}>Log In</button>
+                <form className="sm:p-8">
+                    <div className="mb-4">
+                        <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="email">Email:</label>
+                        <input
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-900 text-white"
+                            id="email"
+                            type="email"
+                            value={email}
+                            onChange={handleEmailChange}
+                            required
+                        />
+                    </div>
+                    <div className="mb-6">
+                        <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="password">Password:</label>
+                        <input
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-900 text-white"
+                            id="password"
+                            type="password"
+                            value={password}
+                            onChange={handlePasswordChange}
+                            required
+                        />
+                    </div>
+                    <div className="flex items-center justify-between">
+                        <button
+                            onClick={handleLoginClick}
+                            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full sm:w-auto"
+                            type="button"
+                        >
+                            Log In
+                        </button>
+                    </div>
                 </form>
             )}
         </div>
     );
 }
+
+
+
+
+
+{/* <div>
+<h1>Login</h1>
+{loggedIn ? (
+    <Dashboard /> // Show Dashboard component when loggedIn is true
+) : (
+    <form>
+        <label>Email:</label>
+        <input
+            type="email"
+            value={email}
+            onChange={handleEmailChange}
+            required
+        />
+        <label>Password:</label>
+        <input
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+            required
+        />
+        <button onClick={handleLoginClick}>Log In</button>
+    </form>
+)}
+</div> */}
