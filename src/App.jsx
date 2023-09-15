@@ -1,18 +1,23 @@
 import React from 'react';
-import Navbar from './Components/NavBar';
-import HeroImage from './Components/HeroImage';
-import Treatments from './Components/Treatments';
-// import Contact from './Components/contact';
+import Home from './Components/HomePage';
+import Login from './Components/Login';
+
+import { 
+ BrowserRouter as Router, 
+ Route, 
+ Link,
+ Routes
+} from "react-router-dom";
 
 
 function App() {
   return (
-    <div className="">
-      <Navbar />
-      <HeroImage />
-      <Treatments />
-      {/* <Contact /> */}
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' Component={Home} />
+        <Route path='dashboard' Component={Login} />
+      </Routes>
+    </Router>
   );
 }
 
