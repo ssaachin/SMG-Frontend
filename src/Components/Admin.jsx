@@ -13,12 +13,11 @@ export default function Admin() {
 
   return (
     <>
-      {/* {loggedIn ? (
+      {loggedIn ? (
         <Dashboard />
       ) : (
         <Login onLogin={handleLogin} />
-      )} */}
-      <Dashboard />
+      )}
     </>
   );
 }
