@@ -1,6 +1,6 @@
 import React from 'react';
 import Home from './Components/HomePage';
-import Login from './Components/Login';
+import Admin from './Components/Admin';
 
 import { 
  BrowserRouter as Router, 
@@ -15,7 +15,7 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' Component={Home} />
-        <Route path='dashboard' Component={Login} />
+        <Route path='dashboard' Component={Admin} />
       </Routes>
     </Router>
   );
