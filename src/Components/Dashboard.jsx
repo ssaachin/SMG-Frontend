@@ -7,7 +7,7 @@ export default function Dashboard() {
     <div className="min-h-screen flex justify-center">
       <div>
         <Users />
-        <TimeSetter />
+        {/* <TimeSetter /> */}
       </div>
     </div>
   );
