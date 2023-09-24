@@ -28,12 +28,16 @@ export default function TimeSetter() {
     <>
       <input 
         type="date"
+        id="date"
+        name="date"
         value={date}
         onChange={(e) => setDate(e.target.value)} 
       />
 
       <input
         type="time"
+        id="time"
+        name="time"
         value={time}
         onChange={(e) => setTime(e.target.value)}
       />
