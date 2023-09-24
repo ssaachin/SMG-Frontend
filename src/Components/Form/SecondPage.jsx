@@ -13,14 +13,6 @@ function SecondForm({ onNext, onBack, setFormData, formData, submitFormData }) {
     }));
   };
 
-    //   const submitData = {
-    //   firstName: formData.firstName,
-    //   lastName: formData.lastName,
-    //   email: formData.email,
-    //   massageType: formData.massageType,
-    //   time: formData.time,
-    // };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     submitFormData(formData, onNext);

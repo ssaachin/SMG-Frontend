@@ -1,8 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function TimeSetter() {
   const [date, setDate] = useState(''); 
   const [time, setTime] = useState('');
+  const [appointmentList, setAppointmentList] = useState([]);
+
+  useEffect(() => {
+    // Fetch appointments data from your API endpoint
+    fetch('https://web-production-42fd.up.railway.app/DisplayAppointment')
+      .then((response) => response.json())
+      .then((data) => {
+        setAppointmentList(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   const handleSubmit = async () => {
     const appointment = {
@@ -41,8 +54,16 @@ export default function TimeSetter() {
         value={time}
         onChange={(e) => setTime(e.target.value)}
       />
-
       <button onClick={handleSubmit}>Submit</button>
+
+      {appointmentList.map((appointment, index) => (
+              <li key={index}>
+                <ul className="px-4 py-2">{appointment.date}</ul>
+                <ul className="px-4 py-2">{appointment.time}</ul>
+              </li>
+            ))}
     </>
   )
 }
+
+
