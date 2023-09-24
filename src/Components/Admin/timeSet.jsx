@@ -10,7 +10,7 @@ export default function TimeSetter() {
       time: time 
     };
 
-    const apiUrl = 'https://web-production-42fd.up.railway.app/appointment'; // Correct API endpoint URL
+    const apiUrl = 'https://web-production-42fd.up.railway.app/api/TimeSet'; // Correct API endpoint URL
 
     const response = await fetch(apiUrl, {
       method: 'POST',
