@@ -86,24 +86,6 @@ export default function Users() {
               </tr>
             </thead>
             <tbody>
-                <tr>
-                  <td className="border px-4 py-2">Sachin</td>
-                  <td className="border px-4 py-2">Gurung</td>
-                  <td className="border px-4 py-2">Sachin@gmail.com</td>
-                  <td className="border px-4 py-2">20194012940124</td>
-                </tr>
-                <tr>
-                  <td className="border px-4 py-2">1</td>
-                  <td className="border px-4 py-2">2</td>
-                  <td className="border px-4 py-2">3</td>
-                  <td className="border px-4 py-2">4</td>
-                </tr>
-                <tr>
-                  <td className="border px-4 py-2">1</td>
-                  <td className="border px-4 py-2">2</td>
-                  <td className="border px-4 py-2">3</td>
-                  <td className="border px-4 py-2">4</td>
-                </tr>
               {clients.map((client, index) => (
                <tr
                  key={index}
