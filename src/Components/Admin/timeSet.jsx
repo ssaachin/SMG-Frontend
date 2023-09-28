@@ -38,7 +38,7 @@ export default function TimeSetter() {
   }
 
   return (
-    <>
+    <div className='bg-00233d'>
       <input 
         type="date"
         id="date"
@@ -62,7 +62,7 @@ export default function TimeSetter() {
                 <ul className="px-4 py-2">{appointment.time_date}</ul>
               </li>
             ))}
-    </>
+    </div>
   )
 }
 
