@@ -55,14 +55,6 @@ export default function TimeSetter() {
         onChange={(e) => setTime(e.target.value)}
       />
 
-      <input
-        type="number"
-        id="del_Id"
-        name="del_Id"
-        value={del_Id}
-        onChange={(e) => setDelId(e.target.value)} // Change this line
-      />
-
       <button onClick={handleSubmit}>Submit</button>
 
       {appointmentList.map((appointment, index) => (
