@@ -86,16 +86,14 @@ export default function Users() {
               </tr>
             </thead>
             <tbody>
-              {clients.map((client, index) => (
-               <tr
-                 key={index}
-               >
-                 <td className="px-4 py-2">{`${client.first_name} ${client.last_name}`}</td>
-                 <td className="px-4 py-2">{client.email}</td>
-                 <td className="px-4 py-2">{client.massage_type}</td>
-                 <td className="px-4 py-2">{client.time_date}</td>
-               </tr>
-             ))}
+            {clients.map((client, index) => (
+              <tr key={index} className="border-bottom-tr">
+                <td className="px-4 py-2">{`${client.first_name} ${client.last_name}`}</td>
+                <td className="px-4 py-2">{client.email}</td>
+                <td className="px-4 py-2">{client.massage_type}</td>
+                <td className="px-4 py-2">{client.time_date}</td>
+              </tr>
+            ))}
             </tbody>
           </table>
         </div>
