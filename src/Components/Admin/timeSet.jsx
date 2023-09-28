@@ -38,6 +38,9 @@ export default function TimeSetter() {
     console.log(data);
 
     setRefresh((prevRefresh) => !prevRefresh);
+
+    setDate('');
+    setTime('');
   }
 
   // const mockData = [
