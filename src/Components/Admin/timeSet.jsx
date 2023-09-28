@@ -25,7 +25,7 @@ export default function TimeSetter() {
       del_Id: del_Id
     };
 
-    const apiUrl = 'https://web-production-42fd.up.railway.app/api/TimeSet'; // Correct API endpoint URL
+    const apiUrl = 'https://web-production-42fd.up.railway.app/DisplayAppointment'; // Correct API endpoint URL
 
     const response = await fetch(apiUrl, {
       method: 'POST',
