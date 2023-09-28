@@ -8,7 +8,7 @@ import {
  Link,
  Routes
 } from "react-router-dom";
-
+// import Dashboard from './Components/Dashboard';
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         <Route path='dashboard' Component={Admin} />
       </Routes>
     </Router>
+    // <Dashboard />
   );
 }
 
