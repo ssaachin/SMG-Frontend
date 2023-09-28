@@ -62,7 +62,7 @@ export default function TimeSetter() {
   // ];
 
   return (
-    <section className='bg-sky-900 p-4 text-white w-2/3 rounded-md h-64 mt-4'>
+    <section className='bg-sky-900 p-4 text-white w-full md:w-2/3 rounded-md h-64 mt-4'>
       <h2 className="text-2xl mb-2 font-bold">Set Available Time</h2>
       <div className='flex gap-2'>
         <input 
