@@ -16,7 +16,7 @@ export default function TimeSetter() {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [refresh]);
 
   const handleSubmit = async () => {
     const appointment = {
