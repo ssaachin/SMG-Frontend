@@ -39,8 +39,7 @@ export default function Users() {
                 <td className="border px-2 sm:px-4 py-2">{`${client.first_name} ${client.last_name}`}</td>
                 <td className="border px-2 sm:px-4 py-2">{client.email}</td>
                 <td className="border px-2 sm:px-4 py-2">{client.massage_type}</td>
-                <td className="border px-2 sm:px-4 py-2">{client.date}</td>
-                <td className="border px-2 sm:px-4 py-2">{client.time}</td>
+                <td className="border px-2 sm:px-4 py-2">{client.time_date}</td>
               </tr>
             ))}
           </tbody>

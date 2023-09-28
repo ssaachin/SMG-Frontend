@@ -59,8 +59,7 @@ export default function TimeSetter() {
 
       {appointmentList.map((appointment, index) => (
               <li key={index}>
-                <ul className="px-4 py-2">{appointment.date}</ul>
-                <ul className="px-4 py-2">{appointment.time}</ul>
+                <ul className="px-4 py-2">{appointment.time_date}</ul>
               </li>
             ))}
     </>
