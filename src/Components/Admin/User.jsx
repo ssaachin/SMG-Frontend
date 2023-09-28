@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function Users() {
   const [clients, setClients] = useState([]);
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     // Define the URL of your Flask API endpoint
@@ -17,11 +18,20 @@ export default function Users() {
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
-  }, []);
+  }, [refresh]);
 
   return (
     <div className="container bg-001525 mx-auto p-4 rounded-md text-white sm:p-8">
-      <h2 className="text-2xl font-bold mb-6">Appointments</h2>
+      <div className='flex items-center'>
+        <h2 className="text-2xl font-bold mb-6 mr-auto">Appointments</h2>
+        <button
+          onClick={() => setRefresh((prevRefresh) => !prevRefresh)}
+          className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-green-200"
+        >
+          Refresh
+        </button>
+      </div>
+      
         <div className="overflow-x-auto overflow-y-scroll h-64">
           <table className="table-auto w-full">
             <thead>

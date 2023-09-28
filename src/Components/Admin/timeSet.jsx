@@ -90,19 +90,7 @@ export default function TimeSetter() {
         >
           Submit
         </button>
-        {/* <button
-          onClick={() => setRefresh((prevRefresh) => !prevRefresh)}
-          className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-green-200"
-        >
-          Refresh
-        </button> */}
-
       </div>
-      {/* {appointmentList.map((appointment, index) => (
-              <li key={index}>
-                <ul className="px-4 py-2">{appointment.time_date}</ul>
-              </li>
-            ))} */}
       <div className='flex gap-5 mt-5'>
         {/* {mockData.map((times, index) => (
           <div key={index} className='bg-001525 text-white p-4 rounded-md'>
@@ -121,63 +109,3 @@ export default function TimeSetter() {
     </section>
   )
 }
-
-
-// import React, { useState, useEffect } from 'react';
-
-// export default function TimeSetter() {
-//   const [date, setDate] = useState(''); 
-//   const [time, setTime] = useState('');
-//   const [appointmentList, setAppointmentList] = useState([]);
-
-  
-//   const handleSubmit = async () => {
-//     const appointment = {
-//       date: date, // Use the correct keys for the date and time
-//       time: time
-//     };
-
-//     const apiUrl = 'https://web-production-42fd.up.railway.app/DisplayAppointment'; // Correct API endpoint URL
-
-//     const response = await fetch(apiUrl, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify(appointment)
-//     });
-
-//     const data = await response.json();
-//     console.log(data);
-//   }
-
-//   return (
-//     <>
-//       <input 
-//         type="date"
-//         id="date"
-//         name="date"
-//         value={date}
-//         onChange={(e) => setDate(e.target.value)} 
-//       />
-
-//       <input
-//         type="time"
-//         id="time"
-//         name="time"
-//         value={time}
-//         onChange={(e) => setTime(e.target.value)}
-//       />
-
-//       <button onClick={handleSubmit}>Submit</button>
-
-//       {appointmentList.map((appointment, index) => (
-//               <li key={index}>
-//                 <ul className="px-4 py-2">{appointment.time_date}</ul>
-//               </li>
-//             ))}
-//     </>
-//   )
-// }
-
-
