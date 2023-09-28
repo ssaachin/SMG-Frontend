@@ -36,6 +36,8 @@ export default function TimeSetter() {
 
     const data = await response.json();
     console.log(data);
+
+    setRefresh((prevRefresh) => !prevRefresh);
   }
 
   // const mockData = [
@@ -85,12 +87,12 @@ export default function TimeSetter() {
         >
           Submit
         </button>
-        <button
+        {/* <button
           onClick={() => setRefresh((prevRefresh) => !prevRefresh)}
           className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-green-200"
         >
           Refresh
-        </button>
+        </button> */}
 
       </div>
       {/* {appointmentList.map((appointment, index) => (
