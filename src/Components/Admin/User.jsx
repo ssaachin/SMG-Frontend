@@ -21,7 +21,8 @@ export default function Users() {
 
   return (
     <div className="container bg-001525 mx-auto p-4 rounded-md text-white sm:p-8">
-        <div className="overflow-x-auto">
+      <h2 className="text-2xl font-bold mb-6">Appointments</h2>
+        <div className="overflow-x-auto overflow-y-scroll h-64">
           <table className="table-auto w-full">
             <thead>
               <tr className="text-left">
