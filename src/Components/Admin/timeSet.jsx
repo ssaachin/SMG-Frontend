@@ -101,7 +101,7 @@ export default function TimeSetter() {
         {appointmentList.map((appointment, index) => (
           <div key={index} className='bg-001525 text-white p-4 rounded-md'>
             <h2 className='text-lg font-semibold'>Time id {appointment.id}</h2>
-            <p>{appointment.date}</p>
+            <p>{appointment.time_date}</p>
           </div>))}
 
 {/* //       {appointmentList.map((appointment, index) => (
