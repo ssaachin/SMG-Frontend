@@ -91,7 +91,7 @@ export default function TimeSetter() {
           Submit
         </button>
       </div>
-      <div className='flex gap-5 mt-5'>
+      <div className='flex gap-5 mt-5 overflow-x-auto'>
         {/* {mockData.map((times, index) => (
           <div key={index} className='bg-001525 text-white p-4 rounded-md'>
             <h2 className='text-lg font-semibold'>{times.title}</h2>
