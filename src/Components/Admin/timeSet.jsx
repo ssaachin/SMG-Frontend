@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 export default function TimeSetter() {
   const [date, setDate] = useState(''); 
   const [time, setTime] = useState('');
-  cosnt [del_Id, setDelId] = useState('');
   const [appointmentList, setAppointmentList] = useState([]);
 
   useEffect(() => {
@@ -21,8 +20,7 @@ export default function TimeSetter() {
   const handleSubmit = async () => {
     const appointment = {
       date: date, // Use the correct keys for the date and time
-      time: time,
-      del_Id: del_Id
+      time: time
     };
 
     const apiUrl = 'https://web-production-42fd.up.railway.app/DisplayAppointment'; // Correct API endpoint URL
