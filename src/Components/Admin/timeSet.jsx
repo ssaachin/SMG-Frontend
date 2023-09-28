@@ -38,7 +38,7 @@ export default function TimeSetter() {
   }
 
   return (
-    <div className='bg-00233d'>
+    <div className='bg-00233d text-white'>
       <input 
         type="date"
         id="date"
