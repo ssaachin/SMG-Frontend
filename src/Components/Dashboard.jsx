@@ -9,6 +9,7 @@ export default function Dashboard() {
         <h1 className='text-3xl font-bold mb-6 text-gray-800'>Welcome to Dashboard, Sabin!</h1>
         <h2 className="text-2xl font-bold mb-6 text-gray-800">Appointments</h2>
         <Users />
+        <h2 className="text-2xl font-bold mb-6 text-gray-800">Set Available Time</h2>
         <TimeSetter />
       </div>
     </div>
