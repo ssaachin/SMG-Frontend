@@ -92,9 +92,9 @@ export default function Users() {
                  className={index % 2 === 0 ? 'bg-gray-100' : ''}
                >
                  <td className="border px-4 py-2">{`${client.first_name} ${client.last_name}`}</td>
-                 <td className="border px-4 py-2">{client.email}</td>
-                 <td className="border px-4 py-2">{client.massage_type}</td>
-                 <td className="border px-4 py-2">{client.time_date}</td>
+                 <td>{client.email}</td>
+                 <td>{client.massage_type}</td>
+                 <td>{client.time_date}</td>
                </tr>
              ))}
             </tbody>
