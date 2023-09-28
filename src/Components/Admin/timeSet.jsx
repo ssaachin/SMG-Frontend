@@ -4,6 +4,7 @@ export default function TimeSetter() {
   const [date, setDate] = useState(''); 
   const [time, setTime] = useState('');
   const [appointmentList, setAppointmentList] = useState([]);
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     // Fetch appointments data from your API endpoint
@@ -84,6 +85,12 @@ export default function TimeSetter() {
         >
           Submit
         </button>
+        <button
+          onClick={() => setRefresh((prevRefresh) => !prevRefresh)}
+          className="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-green-200"
+        >
+          Refresh
+        </button>
 
       </div>
       {/* {appointmentList.map((appointment, index) => (
@@ -97,20 +104,14 @@ export default function TimeSetter() {
             <h2 className='text-lg font-semibold'>{times.title}</h2>
             <p>Date: {times.date}</p>
             <p>Time: {times.time}</p>
-          </div> */}
+          </div>
+        ))} */}
         {appointmentList.map((appointment, index) => (
           <div key={index} className='bg-001525 text-white p-4 rounded-md'>
             <h2 className='text-lg font-semibold'>Time id {appointment.id}</h2>
             <p>{appointment.time_date}</p>
           </div>))}
-
-{/* //       {appointmentList.map((appointment, index) => (
-//               <li key={index}>
-//                 <ul className="px-4 py-2">{appointment.time_date}</ul>
-//               </li>
-//             ))}
-        ))} */}
-</div>
+      </div>
 
     </section>
   )
