@@ -10,16 +10,14 @@ export default function HeroImage() {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [massageType, setMassageType] = useState('')
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
+  const [time_date, setTimeDate] = useState('');
   const [response, setResponse] = useState('');
   const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
         email: "",
         massageType: "",
-        date: "",
-        time: "",
+        time_date: ""
   }); 
 
   const submitFormDataToDatabase = (formData, callback) => {
