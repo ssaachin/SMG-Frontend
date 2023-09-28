@@ -38,7 +38,7 @@ export default function TimeSetter() {
   }
 
   return (
-    <div className='bg-00233d text-white w-2/3'>
+    <div className='bg-00233d text-white w-2/3 rounded-md'>
       <input 
         type="date"
         id="date"
