@@ -43,6 +43,7 @@ export default function TimeSetter() {
         type="date"
         id="date"
         name="date"
+        className='text-black'
         value={date}
         onChange={(e) => setDate(e.target.value)} 
       />
@@ -51,6 +52,7 @@ export default function TimeSetter() {
         type="time"
         id="time"
         name="time"
+        className='text-black'
         value={time}
         onChange={(e) => setTime(e.target.value)}
       />
