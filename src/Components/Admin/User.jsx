@@ -21,15 +21,15 @@ export default function Users() {
 
   return (
     <div className="container mx-auto p-4 sm:p-8">
-      <h2 className="text-2xl font-bold mb-4">Clients</h2>
-      <div className="max-h-80 overflow-x-auto">
-        <table className="table-auto w-full border-collapse">
+      <h2 className="text-3xl font-bold mb-6 text-gray-800">Client List</h2>
+      <div className="max-h-96 overflow-x-auto bg-white rounded-lg shadow-md p-4">
+        <table className="table-auto w-full">
           <thead>
-            <tr>
-              <th className="px-4 py-2 text-left bg-gray-200">Name</th>
-              <th className="px-4 py-2 text-left bg-gray-200">Email</th>
-              <th className="px-4 py-2 text-left bg-gray-200">Massage Type</th>
-              <th className="px-4 py-2 text-left bg-gray-200">Time and Date</th>
+            <tr className="text-left">
+              <th className="px-4 py-2">Name</th>
+              <th className="px-4 py-2">Email</th>
+              <th className="px-4 py-2">Massage Type</th>
+              <th className="px-4 py-2">Time and Date</th>
             </tr>
           </thead>
           <tbody>
@@ -50,4 +50,5 @@ export default function Users() {
     </div>
   );
 }
+
 
