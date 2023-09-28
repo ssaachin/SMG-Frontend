@@ -153,7 +153,7 @@ function SecondForm({ onNext, onBack, setFormData, formData, submitFormData }) {
       });
   }, []);
 
-  const isFormValid = massageType.trim() !== ''; // Remove date and time from the condition
+  const isFormValid = massageType.trim() !== '' && time_date.trim() !== ''; // Remove date and time from the condition
 
   return (
     <div className="container bg-00233d text-white rounded mx-auto p-7">

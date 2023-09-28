@@ -7,7 +7,7 @@ function ThirdForm({ formData }) {
     <h1 className="text-2xl font-semibold mb-4">Massage Booked!</h1>
     <img src={tick} alt='tick' style={{ width: '120px', height: '120px' }} /> 
     <p>Hey {formData.firstName}</p>
-    <p>You have booked {formData.massageType} on {formData.date} at {formData.time} </p>
+    <p>You have booked {formData.massageType} for {formData.time_date}</p>
     <p>A confirmation will be sent to your email</p>
     <p>Thank you</p>
   </div>
