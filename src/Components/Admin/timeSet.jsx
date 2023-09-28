@@ -61,7 +61,6 @@ export default function TimeSetter() {
               <li key={index}>
                 <ul className="px-4 py-2">{appointment.date}</ul>
                 <ul className="px-4 py-2">{appointment.time}</ul>
-                <ul className="px-4 py-2">{appointment.del_Id}</ul>
               </li>
             ))}
     </>
