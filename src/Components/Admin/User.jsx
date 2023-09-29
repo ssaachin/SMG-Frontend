@@ -27,10 +27,10 @@ export default function Users() {
     });
   
     if (response.ok) {
-      console.log('Appointment deleted successfully');
+      console.log('Client deleted successfully');
       setRefresh((prevRefresh) => !prevRefresh);
     } else {
-      console.error('Error deleting appointment:', response.status);
+      console.error('Error deleting Client:', response.status);
       // Handle the error as needed, e.g., display an error message to the user
     }
   };
@@ -59,7 +59,7 @@ export default function Users() {
             </thead>
             <tbody>
             {clients.map((client, index) => (
-              <tr className='p-3' key={index}>
+              <tr className='bg-white' key={index}>
                 <td className="px-4 py-2">{`${client.first_name} ${client.last_name}`}</td>
                 <td className="px-4 py-2">{client.email}</td>
                 <td className="px-4 py-2">{client.massage_type}</td>
