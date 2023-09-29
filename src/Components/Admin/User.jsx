@@ -59,14 +59,14 @@ export default function Users() {
             </thead>
             <tbody>
             {clients.map((client, index) => (
-              <tr className='p-8' key={index}>
+              <tr key={index}>
                 <td className="px-4 py-2">{`${client.first_name} ${client.last_name}`}</td>
                 <td className="px-4 py-2">{client.email}</td>
                 <td className="px-4 py-2">{client.massage_type}</td>
                 <td className="px-4 py-2">{client.time_date}</td>
                 <button
                   onClick={() => handleDelete(client.id)} // Pass the appointment ID to the delete function
-                  className="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-red-200"
+                  className="bg-red-500 m-1 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-red-200"
                 >
                   Delete
                 </button>
