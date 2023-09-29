@@ -45,24 +45,20 @@ export default function TimeSetter() {
 
 
   const handleDelete = async (appointmentId) => {
-    try {
-      const apiUrl = `https://web-production-42fd.up.railway.app/DeleteAppointment/${appointmentId}`; // Construct the delete endpoint URL
-      const response = await fetch(apiUrl, {
-        method: 'DELETE',
-      });
-
-      if (response.ok) {
-        console.log('Appointment deleted successfully');
-        setRefresh((prevRefresh) => !prevRefresh); // Refresh appointment list
-      } else if (response.status === 404) {
-        console.error('Appointment not found');
-      } else {
-        console.error('Error deleting appointment');
-      }
-    } catch (error) {
-      console.error('Error deleting appointment:', error);
+    const apiUrl = `https://web-production-42fd.up.railway.app/DeleteAppointment/${appointmentId}`;
+    const response = await fetch(apiUrl, {
+      method: 'DELETE',
+    });
+  
+    if (response.ok) {
+      console.log('Appointment deleted successfully');
+      setRefresh((prevRefresh) => !prevRefresh);
+    } else {
+      console.error('Error deleting appointment:', response.status);
+      // Handle the error as needed, e.g., display an error message to the user
     }
   };
+  
 
   // const mockData = [
   //   {
