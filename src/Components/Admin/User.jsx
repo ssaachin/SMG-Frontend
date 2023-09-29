@@ -20,6 +20,21 @@ export default function Users() {
       });
   }, [refresh]);
 
+  const handleDelete = async (appointmentId) => {
+    const apiUrl = `https://web-production-42fd.up.railway.app/DeleteClient/${appointmentId}`;
+    const response = await fetch(apiUrl, {
+      method: 'DELETE',
+    });
+  
+    if (response.ok) {
+      console.log('Appointment deleted successfully');
+      setRefresh((prevRefresh) => !prevRefresh);
+    } else {
+      console.error('Error deleting appointment:', response.status);
+      // Handle the error as needed, e.g., display an error message to the user
+    }
+  };
+
   return (
     <div className="container bg-001525 mx-auto p-4 rounded-md text-white sm:p-8">
       <div className='flex items-center'>
@@ -49,6 +64,12 @@ export default function Users() {
                 <td className="px-4 py-2">{client.email}</td>
                 <td className="px-4 py-2">{client.massage_type}</td>
                 <td className="px-4 py-2">{client.time_date}</td>
+                <button
+                  onClick={() => handleDelete(client.id)} // Pass the appointment ID to the delete function
+                  className="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-red-200"
+                >
+                  Delete
+                </button>
               </tr>
             ))}
             </tbody>
