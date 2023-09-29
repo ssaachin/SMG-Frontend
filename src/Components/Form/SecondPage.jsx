@@ -191,7 +191,8 @@ function SecondForm({ onNext, onBack, setFormData, formData, submitFormData }) {
           >
             {appointmentList.map((appointment, index) => (
               <option key={index} value={`${appointment.time_date}`}>
-                {appointment.time_date}
+                Time - {appointment.time}
+                Date - {appointment.date}
               </option>
             ))}
           </select>
