@@ -151,7 +151,7 @@ function SecondForm({ onNext, onBack, setFormData, formData, submitFormData }) {
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [appointmentList]);
 
   const isFormValid = massageType.trim() !== '' && time_date.trim() !== ''; // Remove date and time from the condition
 
