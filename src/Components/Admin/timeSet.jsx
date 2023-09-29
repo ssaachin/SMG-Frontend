@@ -44,9 +44,9 @@ export default function TimeSetter() {
   }
 
 
-  const handleDelete = async (appointment_time_date) => {
+  const handleDelete = async (appointmentId) => {
     try {
-      const apiUrl = `https://web-production-42fd.up.railway.app/DeleteAppointment/${appointment_time_date}`; // Construct the delete endpoint URL
+      const apiUrl = `https://web-production-42fd.up.railway.app/DeleteAppointment/${appointmentId}`; // Construct the delete endpoint URL
       const response = await fetch(apiUrl, {
         method: 'DELETE',
       });
@@ -125,7 +125,7 @@ export default function TimeSetter() {
             <h2 className='text-lg font-semibold'>Time id {appointment.id}</h2>
             <p>{appointment.time_date}</p>
             <button
-              onClick={() => handleDelete(appointment.time_date)} // Pass the appointment ID to the delete function
+              onClick={() => handleDelete(appointment.id)} // Pass the appointment ID to the delete function
               className="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-red-200"
             >
               Delete
