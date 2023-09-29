@@ -43,6 +43,27 @@ export default function TimeSetter() {
     setTime('');
   }
 
+
+  const handleDelete = async (appointmentId) => {
+    try {
+      const apiUrl = `/DeleteAppointment/${appointmentId}`; // Construct the delete endpoint URL
+      const response = await fetch(apiUrl, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        console.log('Appointment deleted successfully');
+        setRefresh((prevRefresh) => !prevRefresh); // Refresh appointment list
+      } else if (response.status === 404) {
+        console.error('Appointment not found');
+      } else {
+        console.error('Error deleting appointment');
+      }
+    } catch (error) {
+      console.error('Error deleting appointment:', error);
+    }
+  };
+
   // const mockData = [
   //   {
   //     title: "Appointment 1",
@@ -103,6 +124,12 @@ export default function TimeSetter() {
           <div key={index} className='bg-001525 text-white p-4 rounded-md'>
             <h2 className='text-lg font-semibold'>Time id {appointment.id}</h2>
             <p>{appointment.time_date}</p>
+            <button
+              onClick={() => handleDelete(appointment.id)} // Pass the appointment ID to the delete function
+              className="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-red-200"
+            >
+              Delete
+            </button>
           </div>))}
       </div>
 
