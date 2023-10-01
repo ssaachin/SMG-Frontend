@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 export default function Users() {
   const [clients, setClients] = useState([]);
   const [refresh, setRefresh] = useState(false);
-  const [clientSentEmail, setClientSentEmail] = useState({});
 
   useEffect(() => {
     // Define the URL of your Flask API endpoint
@@ -36,34 +35,6 @@ export default function Users() {
     }
   };
 
-  const handleEmailSentToggle = async (clientId) => {
-    const updatedClients = clients.map((client) => {
-      if (client.id === clientId) {
-        return { ...client, email_sent: !client.email_sent };
-      }
-      return client;
-    });
-  
-    setClients(updatedClients);
-  
-    const apiUrl = `https://web-production-42fd.up.railway.app/UpdateClientSentEmail/${clientId}`;
-    const response = await fetch(apiUrl, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email_sent: !client.email_sent }),
-    });
-  
-    if (!response.ok) {
-      console.error('Error updating email_sent:', response.status);
-      // Handle the error as needed
-    }
-  };
-
-
-
-
   return (
     <div className="container bg-001525 mx-auto p-4 rounded-md text-white sm:p-8">
       <div className='flex items-center'>
@@ -76,44 +47,34 @@ export default function Users() {
         </button>
       </div>
       
-      <div className="overflow-x-auto overflow-y-scroll h-64">
-        <table className="table-auto w-full">
-          <thead>
-            <tr className="text-left">
-              <th className="px-4 py-2">Name</th>
-              <th className="px-4 py-2">Email</th>
-              <th className="px-4 py-2">Massage Type</th>
-              <th className="px-4 py-2">Time and Date</th>
-              <th className="px-4 py-2">Email sent?</th>
-            </tr>
-          </thead>
-          <tbody>
+        <div className="overflow-x-auto overflow-y-scroll h-64">
+          <table className="table-auto w-full">
+            <thead>
+              <tr className="text-left">
+                <th className="px-4 py-2">Name</th>
+                <th className="px-4 py-2">Email</th>
+                <th className="px-4 py-2">Massage Type</th>
+                <th className="px-4 py-2">Time and Date</th>
+              </tr>
+            </thead>
+            <tbody>
             {clients.map((client, index) => (
               <tr key={index}>
                 <td className="px-4 py-2">{`${client.first_name} ${client.last_name}`}</td>
                 <td className="px-4 py-2">{client.email}</td>
                 <td className="px-4 py-2">{client.massage_type}</td>
                 <td className="px-4 py-2">{client.time_date}</td>
-                <td className="px-4 py-2">
-                <input
-                  type="checkbox"
-                  checked={client.email_sent}
-                  onChange={() => handleEmailSentToggle(client.id)}
-                />
-            </td>
-                <td>
-                  <button
-                    onClick={() => handleDelete(client.id)}
-                    className="bg-red-500 m-1 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-red-200"
-                  >
-                    Delete
-                  </button>
-                </td>
+                <button
+                  onClick={() => handleDelete(client.id)} // Pass the appointment ID to the delete function
+                  className="bg-red-500 m-1 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-red-200"
+                >
+                  Delete
+                </button>
               </tr>
             ))}
-          </tbody>
-        </table>
-      </div>
+            </tbody>
+          </table>
+        </div>
     </div>
   );
 }
