@@ -92,7 +92,7 @@ export default function Users() {
                 <td className="px-4 py-2">
                 <input
                   type="checkbox"
-                  checked={clientSentEmail[client.email_sent] || false}
+                  checked={clientSentEmail[client.email_sent]}
                   onChange={() => handleSentEmailChange(client.id)}
                 />
             </td>
