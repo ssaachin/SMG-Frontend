@@ -48,7 +48,7 @@ export default function Users() {
   
     const apiUrl = `https://web-production-42fd.up.railway.app/UpdateClientSentEmail/${clientId}`;
     const response = await fetch(apiUrl, {
-      method: 'PATCH',
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
       },
