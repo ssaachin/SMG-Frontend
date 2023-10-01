@@ -37,27 +37,7 @@ export default function Users() {
   };
 
 
-    const handleSentEmailChange = async (clientId) => {
-      const newClientSentEmail = { ...clientSentEmail };
-      newClientSentEmail[clientId] = !newClientSentEmail[clientId];
-      setClientSentEmail(newClientSentEmail);
 
-      // Send a PUT request to update the sent_email property
-      const apiUrl = `https://web-production-42fd.up.railway.app/UpdateClientSentEmail/${clientId}`;
-      
-      const response = await fetch(apiUrl, {
-        method: 'PUT',
-        body: JSON.stringify({ sent_email: newClientSentEmail[clientId] }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        console.error('Error updating sent email status:', response.status);
-        // Handle the error as needed
-      }
-    };
 
   return (
     <div className="container bg-001525 mx-auto p-4 rounded-md text-white sm:p-8">
@@ -92,8 +72,7 @@ export default function Users() {
                 <td className="px-4 py-2">
                 <input
                   type="checkbox"
-                  checked={clientSentEmail[client.email_sent]}
-                  onChange={() => handleSentEmailChange(client.id)}
+                  checked={client.sent_email}
                 />
             </td>
                 <td>
