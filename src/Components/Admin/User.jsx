@@ -35,6 +35,28 @@ export default function Users() {
     }
   };
 
+  const handleSentEmailChange = async (clientId) => {
+    // Define the URL of your API endpoint for updating the sent_email property
+    const apiUrl = `https://web-production-42fd.up.railway.app/UpdateClientSentEmail/${clientId}`;
+    
+    // Send a PUT request to update the sent_email property
+    const response = await fetch(apiUrl, {
+      method: 'PUT',
+      body: JSON.stringify({ sent_email: !client.sent_email }), // Toggle the value
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      console.log('Sent email status updated successfully');
+      setRefresh((prevRefresh) => !prevRefresh);
+    } else {
+      console.error('Error updating sent email status:', response.status);
+      // Handle the error as needed
+    }
+  };
+
   return (
     <div className="container bg-001525 mx-auto p-4 rounded-md text-white sm:p-8">
       <div className='flex items-center'>
@@ -47,18 +69,18 @@ export default function Users() {
         </button>
       </div>
       
-        <div className="overflow-x-auto overflow-y-scroll h-64">
-          <table className="table-auto w-full">
-            <thead>
-              <tr className="text-left">
-                <th className="px-4 py-2">Name</th>
-                <th className="px-4 py-2">Email</th>
-                <th className="px-4 py-2">Massage Type</th>
-                <th className="px-4 py-2">Time and Date</th>
-                <th className="px-4 py-2">Email sent?</th>
-              </tr>
-            </thead>
-            <tbody>
+      <div className="overflow-x-auto overflow-y-scroll h-64">
+        <table className="table-auto w-full">
+          <thead>
+            <tr className="text-left">
+              <th className="px-4 py-2">Name</th>
+              <th className="px-4 py-2">Email</th>
+              <th className="px-4 py-2">Massage Type</th>
+              <th className="px-4 py-2">Time and Date</th>
+              <th className="px-4 py-2">Email sent?</th>
+            </tr>
+          </thead>
+          <tbody>
             {clients.map((client, index) => (
               <tr key={index}>
                 <td className="px-4 py-2">{`${client.first_name} ${client.last_name}`}</td>
@@ -82,9 +104,9 @@ export default function Users() {
                 </td>
               </tr>
             ))}
-            </tbody>
-          </table>
-        </div>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
