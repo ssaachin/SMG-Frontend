@@ -36,6 +36,31 @@ export default function Users() {
     }
   };
 
+  const handleEmailSentToggle = async (clientId) => {
+    const updatedClients = clients.map((client) => {
+      if (client.id === clientId) {
+        return { ...client, email_sent: !client.email_sent };
+      }
+      return client;
+    });
+  
+    setClients(updatedClients);
+  
+    const apiUrl = `https://web-production-42fd.up.railway.app/UpdateEmailSent/${clientId}`;
+    const response = await fetch(apiUrl, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email_sent: !client.email_sent }),
+    });
+  
+    if (!response.ok) {
+      console.error('Error updating email_sent:', response.status);
+      // Handle the error as needed
+    }
+  };
+
 
 
 
@@ -72,7 +97,8 @@ export default function Users() {
                 <td className="px-4 py-2">
                 <input
                   type="checkbox"
-                  checked={client.sent_email}
+                  checked={client.email_sent}
+                  onChange={() => handleEmailSentToggle(client.id)}
                 />
             </td>
                 <td>
